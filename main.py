@@ -11,7 +11,7 @@ if not os.path.exists("users.json"):
         file.write("{}")  # Write an empty JSON object
 
 # Load image
-image_path = "/Users/dastagira/Desktop/3RD Yr PROJECT /Movies-Recommender-system/Netflix Sits At 231 Million Subscribers_.jpeg"
+image_path = "./movie_img.jpeg"
 if os.path.exists(image_path):
     col1, col2, col3 = st.columns([1, 2, 1])
     with col2:
@@ -62,9 +62,9 @@ def recommend(movie, slider):
         return [], [], [], []
 
 # Load data
-movies_dict = pkl.load(open('/Users/dastagira/Desktop/3RD Yr PROJECT /Movies-Recommender-system/movies_dict.pkl', 'rb'))
+movies_dict = pkl.load(open('./movies_dict.pkl', 'rb'))
 movies = pd.DataFrame(movies_dict)
-similarity = pkl.load(open('/Users/dastagira/Desktop/3RD Yr PROJECT /Movies-Recommender-system/similarity.pkl', 'rb'))
+similarity = pkl.load(open('./similarity.pkl', 'rb'))
 
 # Initialize session state for authentication
 if "logged_in" not in st.session_state:
