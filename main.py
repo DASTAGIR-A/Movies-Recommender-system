@@ -5,6 +5,8 @@ import requests
 import os
 from auth import login, signup
 
+st.set_page_config(page_title="Filmlytic", page_icon=":movie_camera:", layout="wide")
+
 # Ensure users.json exists and is valid
 if not os.path.exists("users.json"):
     with open("users.json", "w") as file:
